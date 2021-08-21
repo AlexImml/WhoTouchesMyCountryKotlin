@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    // for country cell
+    <string name="name_prefix">Name:</string>
+    <string name="native_name_prefix">Native Name:</string>
+
+    // for sorting menu
+    <string name="sort_string">Sort</string>
+    <string name="none_string">None</string>
+    <string name="name_string">Name</string>
+    <string name="size_string">Size</string>
+
+    // country border fragment
+
+    <string name="country_border_fragment_title">Who touches my borders ?</string>
+
+    <string name="country_border_fragment_empty_list">No one !</string>
+
+</resources>
