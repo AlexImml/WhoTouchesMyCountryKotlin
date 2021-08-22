@@ -18,6 +18,10 @@ class CountryAdapter( var clickListener: (Country) -> Unit = {}): RecyclerView.A
         this.countryArr = countryArr
     }
 
+    fun isDataNullOrEmpty(): Boolean {
+        return countryArr.isNullOrEmpty()
+    }
+
     override fun getItemCount(): Int {
         return countryArr.size
     }

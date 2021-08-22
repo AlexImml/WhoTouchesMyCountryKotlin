@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.example.whotouchesmycountry.R
 import com.example.whotouchesmycountry.ui.countryActivity.CountriesProviderInterface
 import com.example.whotouchesmycountry.ui.countryList.CountryListFragment
+import kotlinx.android.synthetic.main.fragment_country_border_list.*
 
 
 class CountryBorderListFragment : Fragment() {
@@ -37,15 +38,23 @@ class CountryBorderListFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         loadFragment(listFragment)
         setupViewModel()
+        handleEmptyArray()
     }
 
     // setup methods
 
     private fun setupViewModel() {
         countriesProvider?.getListOfCountries?.observe(requireActivity(),{
+            handleEmptyArray()
             listFragment.listAdapter.updateCountryArray(it)
             listFragment.listAdapter.notifyDataSetChanged()
         })
+    }
+
+    private fun handleEmptyArray() {
+        if (listFragment.listAdapter.isDataNullOrEmpty()) {
+            emptyTextView.visibility = View.GONE
+        }
     }
 
     private fun loadFragment(fragment: Fragment) {
